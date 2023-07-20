@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>Document</title>
+<style>
+*{margin:0; padding:0;}
+
+#wrap{
+	/* 너빗값을 90%, 마진값과 선값 설정 */
+	width:90%;
+	margin:0 auto;
+	border:4px solid #000;
+}
+
+
+/* 자식 태그 */
+/* 자식 태그 공통 */
+#wrap div{
+
+	display:inline-block;
+	height:100px;
+}
+
+/* 자식태그 각각 배경색 설정 */
+#wrap div:first-child{
+	background:#f45750;
+}
+
+#wrap div:nth-child(2){
+	background:#40b0f9;
+}
+
+#wrap div:nth-child(3){
+	background:#00d2a5;
+}
+
+#wrap div:nth-child(4){
+	background:#ff884d;
+}
+
+#wrap div:last-child{
+	background:#464646;
+}
+
+
+/* 브라우저 크기 320px일 때 */
+@media all and (min-width:320px){
+	#wrap div{
+		width:100%;
+	}
+}
+
+/* 브라우저 크기 768px일 때 */
+@media all and (min-width:768px){
+	#wrap div{
+		width:50%;
+	}
+	
+	#wrap div:last-child{
+		width: 100%;
+	}
+}
+
+/* 브라우저 크기 1024px일 때 */
+@media all and (min-width:1024px){
+	#wrap div{
+		width:20%;
+	}
+
+	#wrap div:last-child{
+		width: 20%;
+	}
+}
+
+
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div></div><div></div><div></div><div></div><div></div>
+	</div>
+</body>
+</html>
