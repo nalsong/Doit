@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>FLAT DESIGN - 플랫디자인이란?</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="images/favicon/flat-design-touch.png">
@@ -149,7 +149,7 @@
         }
 
 
-        /* 콘텐츠영역 */
+        /* 콘텐츠영역(공통) */
         .content_section{
             order: 4;
             padding: 20px;
@@ -157,19 +157,118 @@
             background: #fff;
         }
 
+
+        /* 콘텐츠영역 */
+        .content_section > div{
+            margin-top: 60px;
+            margin-top: 30750rem;
+        }
+
+        .content_section > div:first-child{
+            margin-top: 0;
+        }
+
+        .content_row_1{
+            text-align: center;
+        }
+
+        .content_row_1 img{
+            max-width: 100%;
+        }
+
+        .content_row_1 h3{
+            margin: 26px 0 14px 0;
+            margin: 1.625rem 0 0.875rem 0;
+            font-size: 1.626em;
+            font-size: 1.626rem;
+            color: #333;
+        }
+
+        .content_row_1 p{
+            font-size: 0.938em;
+            font-size: 0.938rem;
+            line-height: 26px;
+            line-height: 1.625rem;
+            color: #444;
+        }
+
+        .content_row_2 > article{
+            margin-top: 40px;
+            margin-top: 2.500rem;
+            text-align: center;
+        }
+
+        .content_row_2>article:first-child{
+            margin-top: 0;
+        }
+
+        .content_row_2 img{
+            max-width: 100%;
+        }
+
+        .content_row_2 h4{
+            margin: 26px 0 14px 0;
+            margin: 1.625rem 0 0.875rem 0;
+            font-size: 1.188em;
+            font-size: 1.188rem;
+            color: #333;
+        }
+
+        .content_row_2 p{
+            font-size: 0.813em;
+            font-size: 0.813rem;
+            line-height: 21px;
+            line-height: 1.313rem;
+            color: #444;
+        }
+
+
+        .content_row_3 h4{
+            margin-bottom: 20px;
+            margin-bottom: 1.250rem;
+            padding-bottom: 8px;
+            padding-bottom: 0.500rem;
+            font-size: 1.188em;
+            font-size: 1.188rem;
+            border-bottom: 3px solid #2ecc71;
+            color: #333;
+        }
+
+        .para p:first-child{
+            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
+        }
+
+        .para p{
+            font-size: 0.813em;
+            font-size: 0.813rem;
+            line-height: 21px;
+            line-height: 1.313rem;
+            color: #444;
+        }
+
         /* 푸터 영역 CSS */
         .footer{
             order:5;
+            width:100%;
+            background:#474747;
         }
 
+        .footer p{
+            padding:20px;
+            padding:1.250rem;
+            font-size:0.813em;
+            font-size:0.813rem;
+            text-align:center;
+            text-transform:uppercase;
+            font-weight:bold;
+            color:#fff;
+            text-shadow:0px 1px 1px #191919;
+        }
 
 
         /* 태블릿용 CSS */
         @media all and (min-width:768px){
-             /* 공통 CSS */
-            #wrap{
-            flex-flow: row wrap;
-            }
 
             /* 헤더 영역 */
             .header{
@@ -217,10 +316,23 @@
                 margin-top: -0.938rem;
             }
 
-            /* 콘텐츠영역 */
+            /* 콘텐츠영역(공통) */
             .content_section{
                 padding: 40px;
                 padding: 2.500rem;
+            }
+            
+            
+            /* 콘텐츠영역 */
+            .content_section>div{
+                margin-top: 120px;
+                margin-top: 7.500rem;
+            }
+
+            /* 푸터 영역 CSS */
+            .footer p{
+                padding:40px 0;
+                padding:2.500rem 0;
             }
 
         }
@@ -276,7 +388,7 @@
             .nav{
                 display: flex;
                 align-items: center;
-                /* position: static; */
+                position: static;
                 width: 87.5%;
                 /* 840px ÷ 960px */
             }
@@ -316,18 +428,41 @@
                 order:2;
             }
 
-            /*콘텐츠 영역 */
+            /*콘텐츠 영역(공통) */
             .content_section{
                 order: 3;
                 padding: 60px;
                 padding: 3.750rem;
             }
 
+            /*콘텐츠 영역 */
+            .content_row_2{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .content_row_2 article{
+                width: 30%;
+                /* 252px ÷ 840px */
+                margin: 0;
+            }
+
+            .para{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .para p{
+                width: 47.61904761904762%;
+                /* 400px ÷ 840px */
+                margin: 0;
+            }
+
+
               /* 푸터 영역 CSS */
             .footer{
                 order:4;
             }
-
 
         }
 
