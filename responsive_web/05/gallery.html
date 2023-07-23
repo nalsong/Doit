@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>FLAT DESIGN - 갤러리</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="">
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="images/favicon/flat-design-touch.png">
@@ -148,7 +148,7 @@
         }
 
 
-        /* 콘텐츠영역 */
+        /* 콘텐츠영역(공통) */
         .content_section{
             order: 4;
             padding: 20px;
@@ -156,19 +156,145 @@
             background: #fff;
         }
 
+
+        .gallery_list img{
+            width: 100%;
+            max-width: 100%;
+            border-radius: 5px;
+            transition: all 0.4s;
+            /* 필터 : 속성 또는 속성값에 따라 다른 결과물을 보여줌 */
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+        }
+        
+        .gallery_list img:hover{
+            /* 마우스 올리면 필터 해제 */
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+        }
+
+        .gallery_list li{
+            margin-top: 20px;
+            margin-top: 1.250rem;
+        }
+
+        .gallery_list li:first-child{
+            margin-top: 0;
+        }
+
+        .content_row_2{
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0 40px 0;
+            margin: 1.875rem 0 2.500rem 0;
+        }
+
+        .search_window{
+            width: 118px;
+            width: 7.375rem;
+            height: 28px;
+            height: 1.750rem;
+            font-size: 0.688em;
+            font-size: 0.688rem;
+            line-height: 28px;
+            line-height: 1.750rem;
+            text-indent: 10px;
+            text-indent: 0.625rem;
+        }
+
+        .search_select_box{
+            display: none;
+        }
+
+        .write_box a{
+            display: block;
+
+            width: 70px;
+            width: 4.375rem;
+            height: 30px;
+            height: 1.875rem;
+            font-size: 0.813em;
+            font-size: 0.813rem;
+            line-height: 30px;
+            line-height: 1.875rem;
+            text-align: center;
+            color: #fff;
+            background: #e65d5d;
+        }
+
+        .content_row_3{
+            display: flex;
+            justify-content: center;
+        }
+
+        .content_row_3 span{
+            width: 28px;
+            width: 1.750rem;
+            height: 28px;
+            height: 1.750rem;
+            text-indent: -9999px;
+        }
+
+        .content_row_3 span.list_prev_btn{
+            margin-right: 10px;
+            margin-right: 0.625rem;
+            background: #2ecc71 url(images/s_images/list_prev_btn.png) center center no-repeat;
+        }
+
+
+        .content_row_3 span.list_next_btn{
+            margin-left: 10px;
+            margin-left: 0.625rem;
+            background: #2ecc71 url(images/s_images/list_next_btn.png) center center no-repeat;
+        }
+
+        .content_row_3 a{
+            width: 26px;
+            width: 1.625rem;
+            font-size: 0.813em;
+            font-size: 0.813rem;
+            line-height: 26px;
+            line-height: 1.625rem;
+            text-align: center;
+            border: 1px solid #219af7;
+            color: #219af7;
+            transition: all 0.2s;
+        }
+
+        .content_row_3 a:nth-of-type(2){
+            margin: 0.6px;
+            margin: 0 0.375rem;
+        }
+
+        .content_row_3 a:hover{
+            color:#fff;
+            background: #219af7;
+        }
+
+
         /* 푸터 영역 CSS */
         .footer{
             order:5;
+            width:100%;
+            background:#474747;
+        }
+
+        .footer p{
+            padding:20px;
+            padding:1.250rem;
+            font-size:0.813em;
+            font-size:0.813rem;
+            text-align:center;
+            text-transform:uppercase;
+            font-weight:bold;
+            color:#fff;
+            text-shadow:0px 1px 1px #191919;
         }
 
 
 
         /* 태블릿용 CSS */
         @media all and (min-width:768px){
-             /* 공통 CSS */
-            #wrap{
-            flex-flow: row wrap;
-            }
 
             /* 헤더 영역 */
             .header{
@@ -216,10 +342,76 @@
                 margin-top: -0.938rem;
             }
 
-            /* 콘텐츠영역 */
+            /* 콘텐츠영역(공통) */
             .content_section{
                 padding: 40px;
                 padding: 2.500rem;
+            }
+
+            .gallery_list{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .gallery_list li{
+                width: 48.54651162790698%;
+                /* 334px ÷ 688px */
+            }
+
+            .gallery_list li:nth-child(2){
+                margin-top: 0;
+            }
+
+            .search_select_box{
+                display: inline-block;
+                position: relative;
+            }
+
+            .search_select_box span{
+                display: inline-block;
+                width: 80px;
+                width: 5.000rem;
+                height: 30px;
+                height: 1.875rem;
+                font-size: 0.813em;
+                font-size: 0.813rem;
+                line-height: 28px;
+                line-height: 1.750rem;
+                text-align: center;
+                color: #fff;
+                background: #e65d5d;
+                cursor: pointer;
+            }
+
+            .search_select_list{
+                display: none;
+                position: absolute;
+                top:105%;
+                left:0;
+                width: 100%;
+            }
+
+            .search_select_list li{
+                padding: 6px 0;
+                padding: 0.375rem 0;
+                font-size: 0.750em;
+                font-size: 0.750rem;
+                text-indent: 10px;
+                text-indent: 0.625rem;
+                color: #fff;
+                background: #e65d5d;
+                cursor: pointer;
+            }
+
+            .search_select_box:hover .search_select_list{
+                display: block;
+            }
+
+            /* 푸터 영역 CSS */
+            .footer p{
+                padding:40px 0;
+                padding:2.500rem 0;
             }
 
         }
@@ -275,7 +467,7 @@
             .nav{
                 display: flex;
                 align-items: center;
-                /* position: static; */
+                position: static;
                 width: 87.5%;
                 /* 840px ÷ 960px */
             }
@@ -315,11 +507,22 @@
                 order:2;
             }
 
-            /*콘텐츠 영역 */
+            /*콘텐츠 영역(공통) */
             .content_section{
                 order: 3;
                 padding: 60px;
                 padding: 3.750rem;
+            }
+
+            .gallery_list li{
+                width: 23.92857142857143%;
+                /* 201px ÷ 840px */
+                margin-top: 12px;
+                margin-top: 0.750rem;
+            }
+
+            .gallery_list li:nth-child(3), .gallery_list li:nth-child(4){
+                margin-top: 0;
             }
 
               /* 푸터 영역 CSS */
@@ -365,8 +568,8 @@
         <!-- 서브헤더 -->
         <section class="sub_header_section">
             <h2>갤러리</h2>
-            <ul class="beadcrum_list">
-                <li><a href="index.html">홈</a></li>
+            <ul class="breadcrum_list">
+                <li><a href="index.html">홈 / </a></li>
                 <li><a href="gallery.html">갤러리</a></li>
             </ul>
         </section>
