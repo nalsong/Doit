@@ -11,7 +11,7 @@
     <script src="js/jquery.min.js"></script>
     <style>
                 
-                /* 모바일용 CSS 생략 */
+        /* 모바일용 CSS 생략 */
         /* 공통 CSS */
         #wrap{
             display: flex;
@@ -162,8 +162,138 @@
             width: 100%;
         }
 
+        .board_table caption{
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+        }
 
+        .board_table thead, .board_table tbody{
+            font-size: 0.813em;
+            font-size: 0.813rem;
+            text-align: center;
+            font-weight: bold;
+        }
 
+        .board_table thead{
+            color: #fff;
+            background: #2c3e50;
+        }
+
+        .board_table tbody, .board_table tbody a{
+            color:#333;
+        }
+
+        .board_table tbody tr:nth-child(odd){
+            background: #f6f6f6;
+        }
+
+        .board_table thead tr th{
+            padding: 18px 0;
+            padding: 1.125rem 0;
+        }
+
+        .board_table tbody tr td{
+            padding: 22px 0;
+            padding: 1.375rem 0;
+        }
+
+        .board_table thead tr th:first-child, .board_table thead tr th:nth-child(3), .board_table thead tr th:nth-child(4),
+        .board_table tbody tr th:first-child, .board_table tbody tr th:nth-child(3), .board_table tbody tr th:nth-child(4){
+            display: none;
+        }
+
+                
+        .content_row_2{
+            display:flex;
+            justify-content:space-between;
+            margin:30px 0 40px 0;
+            margin:1.875rem 0 2.500rem 0;
+        }
+
+        .search_window{
+            width:118px;
+            width:7.375rem;
+            height:28px;
+            height:1.750rem;
+            font-size:0.688em;
+            font-size:0.688rem;
+            line-height:28px;
+            line-height:1.750rem;
+            text-indent:10px;
+            text-indent:0.625rem;
+        }
+
+        .search_select_box{
+            display:none;
+        }
+
+        .write_box a{
+            display:block;
+            width:70px;
+            width:4.375rem;
+            height:30px;
+            height:1.875rem;
+            font-size:0.813em;
+            font-size:0.813rem;
+            line-height:30px;
+            line-height:1.875rem;
+            text-align:center;
+            background:#e65d5d;
+            color:#fff;
+        }
+
+        .content_row_3{
+            display:flex;
+            justify-content:center;
+        }
+
+        .content_row_3 span{
+            width:28px;
+            width:1.750rem;
+            height:28px;
+            height:1.750rem;
+            text-indent:-9999px;
+        }
+
+        .content_row_3 span.list_prev_btn{
+            margin-right:10px;
+            margin-right:0.625rem;
+            background:#2ecc71 url(images/s_images/list_prev_btn.png) center center no-repeat;
+        }
+
+        .content_row_3 span.list_next_btn{
+            margin-left:10px;
+            margin-left:0.625rem;
+            background:#2ecc71 url(images/s_images/list_next_btn.png) center center no-repeat;
+        }
+
+        .content_row_3 a{
+            width:26px;
+            width:1.625rem;
+            font-size:0.813em;
+            font-size:0.813rem;
+            line-height:26px;
+            line-height:1.625rem;
+            text-align:center;
+            border:1px solid #219af7;
+            color:#219af7;
+            transition:all 0.2s;
+        }
+
+        .content_row_3 a:nth-of-type(2){
+            margin:0 6px;
+            margin:0 0.375rem;
+        }
+
+        .content_row_3 a:hover{
+            color:#fff;
+            background:#219af7;
+        }
 
         /* 푸터 영역 CSS */
         .footer{
@@ -239,6 +369,78 @@
             .content_section{
                 padding: 40px;
                 padding: 2.500rem;
+            }
+
+            /* 콘텐츠영역 */
+            .board_table thead tr th:first-child, .board_table thead tr th:nth-child(3), .board_table thead tr th:nth-child(4),
+            .board_table tbody tr th:first-child, .board_table tbody tr th:nth-child(3), .board_table tbody tr th:nth-child(4){
+                display: table-cell;
+            }
+
+            .board_table thead tr th:first-child{
+                width: 10%;
+            }
+
+            .board_table thead tr th:nth-child(2){
+                width: 65%;
+            }
+            .board_table thead tr th:nth-child(3){
+                width: 15%;
+            }
+            .board_table thead tr th:nth-child(4){
+                width: 10%;
+            }
+
+
+            .board_table tbody tr th:nth-child(2){
+                text-align: left;
+            }
+
+
+                        
+            .search_select_box{
+            display:inline-block;
+            position:relative;
+            }
+
+            .search_select_box span{
+                display:inline-block; 
+                width:80px;
+                width:5.000rem;
+                height:30px;
+                height:1.875rem;
+                font-size:0.813em;
+                font-size:0.813rem;
+                line-height:28px;
+                line-height:1.750rem;
+                text-align:center;
+                color:#fff;
+                background:#e65d5d;
+                cursor:pointer;
+            }
+
+            .search_select_list{
+                display:none;
+                position:absolute;
+                top:105%;
+                left:0;
+                width:100%;
+            }
+
+            .search_select_list li{
+                padding:6px 0;
+                padding:0.375rem 0;
+                font-size:0.750em;
+                font-size:0.750rem;
+                text-indent:10px;
+                text-indent:0.625rem;
+                color:#fff;
+                background:#e65d5d;
+                cursor:pointer;
+            }
+
+            .search_select_box:hover .search_select_list{
+                display:block;
             }
 
             /* 푸터 영역 CSS */
@@ -351,6 +553,11 @@
             .footer{
                 order:4;
             }
+            .footer p{
+                padding-left:3.125%;
+                /* 30px ÷ 960px */
+                text-align:left;
+            }
 
 
         }
@@ -411,48 +618,69 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th>
-                                <td>5</td>
-                                <td><a href="">저는 누굴까요?</a></td>
-                                <td>FLAT DESIGN</td>
-                                <td>22</td>
-                            </th>
-                            <th>
-                                <td>4</td>
-                                <td><a href="">BOLG에서 다양한 정보를 만나보세요</a></td>
-                                <td>FLAT DESIGN</td>
-                                <td>23</td>
-                            </th>
-                            <th>
-                                <td>3</td>
-                                <td><a href="">FLAT DESIGN은 원색을 강조합니다.</a></td>
-                                <td>FLAT DESIGN</td>
-                                <td>67</td>
-                            </th>
-                            <th>
-                                <td>2</td>
-                                <td><a href="">홈페이지 리뉴얼 소식</a></td>
-                                <td>FLAT DESIGN</td>
-                                <td>96</td>
-                            </th>
-                            <th>
-                                <td>1</td>
-                                <td><a href="">안녕하세요. 홈페이지를 오픈했습니다.</a></td>
-                                <td>FLAT DESIGN</td>
-                                <td>123</td>
-                            </th>
+                            <td>5</td>
+                            <td><a href="">저는 누굴까요?</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="">BOLG에서 다양한 정보를 만나보세요</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="">FLAT DESIGN은 원색을 강조합니다.</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>67</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="">홈페이지 리뉴얼 소식</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>96</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="">안녕하세요. 홈페이지를 오픈했습니다.</a></td>
+                            <td>FLAT DESIGN</td>
+                            <td>123</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="content_row_2">
-                생략
+                <div class="search_box">
+                    <form action="#" method="get">
+                        <input type="search" name="gallery_search_window" class="search_window" placeholder="검색어">
+                        <div class="search_select_box">
+                            <span>검색대상</span>
+                            <ul class="search_select_list">
+                                <li>제목</li>
+                                <li>내용</li>
+                                <li>제목+내용</li>
+                                <li>댓글</li>
+                                <li>이름</li>
+                                <li>닉네임</li>
+                                <li>아이디</li>
+                                <li>태그</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="write_box">
+                    <a href="#">글쓰기</a>
+                </div>
             </div>
             <div class="content_row_3">
-                생략
+                <span class="list_prev_btn">갤러리 이전 버튼</span>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <span class="list_next_btn">갤러리 다음 버튼</span>
             </div>
         </section>
-
         <!-- 푸터 영역 -->
         <footer class="footer">
             <p>copyright&copy;2023.flat design bolg all rights reserved.</p>
