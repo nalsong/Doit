@@ -11,7 +11,7 @@
     <script src="js/jquery.min.js"></script>
     <style>
                 
-        /* 모바일용 CSS 생략 */
+                /* 모바일용 CSS 생략 */
         /* 공통 CSS */
         #wrap{
             display: flex;
@@ -124,8 +124,43 @@
         }
 
 
+        /* 서브헤더 영역 */
+        .sub_header_section{
+            order: 3;
+            padding: 48px 0;
+            padding: 3.000rem 0;
+            text-align: center;
+            background: #219af7;
+        }
+
+        .sub_header_section h2{
+            margin-bottom: 12px;
+            margin-bottom: 0.750rem;
+            font-size: 1.313em;
+            font-size: 1.313rem;
+            color: #fff;
+        }
+
+        .breadcrum_list li{
+            display: inline;
+            font-size: 0.813em;
+            font-size: 0.813rem;
+            font-weight: bold;
+        }
 
 
+        /* 콘텐츠영역 */
+        .content_section{
+            order: 4;
+            padding: 20px;
+            padding: 1.250rem;
+            background: #fff;
+        }
+
+        /* 푸터 영역 CSS */
+        .footer{
+            order:5;
+        }
 
 
 
@@ -182,9 +217,11 @@
                 margin-top: -0.938rem;
             }
 
-
-
-
+            /* 콘텐츠영역 */
+            .content_section{
+                padding: 40px;
+                padding: 2.500rem;
+            }
 
         }
 
@@ -274,8 +311,22 @@
             }
 
 
+            /* 서브헤더 영역 */
+            .sub_header_section{
+                order:2;
+            }
 
+            /*콘텐츠 영역 */
+            .content_section{
+                order: 3;
+                padding: 60px;
+                padding: 3.750rem;
+            }
 
+              /* 푸터 영역 CSS */
+            .footer{
+                order:4;
+            }
 
 
         }
